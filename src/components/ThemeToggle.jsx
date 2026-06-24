@@ -1,48 +1,28 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 function ThemeToggle() {
+  const [theme, setTheme] = useState(() => {
+    return localStorage.getItem("theme") || "dark";
+  });
 
-  const [theme, setTheme] = useState("dark");
-
-  useEffect(() => {
-
-    const savedTheme =
-      localStorage.getItem("theme") || "dark";
-
-    document.documentElement.setAttribute(
-      "data-theme",
-      savedTheme
-    );
-
-    setTheme(savedTheme);
-
-  }, []);
+  document.documentElement.setAttribute("data-theme", theme);
 
   const toggleTheme = () => {
+    const newTheme = theme === "dark" ? "light" : "dark";
 
-    const newTheme =
-      theme === "dark"
-        ? "light"
-        : "dark";
+    document.documentElement.setAttribute("data-theme", newTheme);
 
-    document.documentElement.setAttribute(
-      "data-theme",
-      newTheme
-    );
-
-    localStorage.setItem(
-      "theme",
-      newTheme
-    );
+    localStorage.setItem("theme", newTheme);
 
     setTheme(newTheme);
-
   };
 
   return (
     <button
       onClick={toggleTheme}
       className="theme-toggle"
+      aria-label="Cambiar tema"
+      title="Cambiar tema"
     >
       {theme === "dark" ? "☀️" : "🌙"}
     </button>

@@ -14,6 +14,8 @@ export const profile = {
         {
             title: "Axiom AI",
 
+            featured: true,
+
             image: "/assets/img/projects/axiom-ai.jpg",
 
             description:

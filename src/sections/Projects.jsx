@@ -1,9 +1,5 @@
 import { profile } from "../data/profile";
-
 import FadeIn from "../components/FadeIn";
-import StaggerContainer from "../components/StaggerContainer";
-import StaggerItem from "../components/StaggerItem";
-
 import { Parallax } from "react-scroll-parallax";
 
 function Projects() {
@@ -26,19 +22,18 @@ function Projects() {
           </h2>
         </FadeIn>
 
-        <StaggerContainer>
+        <FadeIn>
 
           <div className="projects-grid">
 
             {profile.projects.map((project) => (
 
-              <StaggerItem
+              <FadeIn
                 key={project.title}
+                className={project.featured ? "project-card-featured" : ""}
               >
 
-                <article
-                  className="project-card"
-                >
+                <article className="project-card">
 
                   {project.image && (
 
@@ -84,14 +79,14 @@ function Projects() {
                   </a>
 
                 </article>
+                </FadeIn>
 
-              </StaggerItem>
 
             ))}
 
           </div>
 
-        </StaggerContainer>
+        </FadeIn>
 
       </div>
     </section>

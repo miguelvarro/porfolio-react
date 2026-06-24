@@ -357,6 +357,7 @@ a {
   gap: 1.5rem;
 }
 
+
 .project-card {
   padding: 2rem;
 
@@ -442,7 +443,7 @@ a {
   border: 1px solid var(--card-border);
 }
 .project-card-featured {
-  grid-column: span 2;
+  grid-column: 1 / -1;
 }
 @media (max-width: 900px) {
 
@@ -451,7 +452,7 @@ a {
   }
 
   .project-card-featured {
-    grid-column: span 1;
+    grid-column: 1 / -1;
   }
 
 }

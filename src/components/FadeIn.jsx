@@ -1,8 +1,9 @@
 import { motion } from "framer-motion";
 
-function FadeIn({ children }) {
+function FadeIn({ children, className = "" }) {
   return (
     <motion.div
+      className={className}
       initial={{
         opacity: 0,
         y: 60,

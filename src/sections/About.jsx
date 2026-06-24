@@ -1,4 +1,3 @@
-import { profile } from "../data/profile";
 import FadeIn from "../components/FadeIn";
 
 function About() {
